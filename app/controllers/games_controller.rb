@@ -30,6 +30,11 @@ class GamesController < ApplicationController
     render json: {message: "Removed"}, status: :ok
   end
 
+  def form
+    @game = Game.new
+    render partial: "form"
+  end
+
   private
     def set_game
       @game = Game.find(params[:id])
